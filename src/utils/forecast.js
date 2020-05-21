@@ -9,13 +9,13 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Unable to find location', undefined)
     } else {
-        const { temperature, feelslike } = body.current;
+        const { temperature, feelslike, humidity, wind_speed } = body.current;
         let weatherCast = body.current.weather_descriptions[0];
 
         if (weatherCast === undefined) {
             weatherCast = 'Unable to find weather cast'
         }
-        callback(undefined, `${weatherCast}. It is currently ${temperature} degrees outside. It feels like ${feelslike} degrees outside.`)
+        callback(undefined, `${weatherCast}. It is currently ${temperature} degrees outside. It feels like ${feelslike} degrees outside.  The wind speed is ${wind_speed} and the current humidity is ${humidity}.`)
     }
   })
 };
