@@ -15,7 +15,7 @@ const forecast = (latitude, longitude, callback) => {
         if (weatherCast === undefined) {
             weatherCast = 'Unable to find weather cast'
         }
-        callback(undefined, `${weatherCast}. It is currently ${temperature} degrees outside. It feels like ${feelslike} degrees outside.  The wind speed is ${wind_speed} and the current humidity is ${humidity}.`)
+        callback(undefined, `${weatherCast}. It is currently ${temperature} degrees outside. It feels like ${feelslike} degrees outside.  The wind speed is ${wind_speed} and the current humidity is ${humidity}%.`)
     }
   })
 };
